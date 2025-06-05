@@ -1,1 +1,44 @@
+/* screens-css/settings.css */
+.settings-screen {
+  padding: 20px;
+  color: white;
+  background: #111;
+  font-family: sans-serif;
+}
+
+.settings-screen h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+#pinInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+#savePinBtn, #powerOffBtn {
+  width: 100%;
+  padding: 10px;
+  background: #444;
+  border: none;
+  color: white;
+  font-size: 1em;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+#savePinBtn:hover, #powerOffBtn:hover {
+  background: #666;
+}
+
+#statusMsg {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: lightgreen;
+}
 
