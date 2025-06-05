@@ -1,1 +1,45 @@
+/* screens-css/timer.css */
+.timer-screen {
+  background: #111;
+  color: white;
+  font-family: sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.timer-screen h2 {
+  margin-bottom: 10px;
+}
+
+#minutes, #seconds {
+  width: 48%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+#startTimerBtn {
+  width: 100%;
+  padding: 10px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#startTimerBtn:hover {
+  background: #666;
+}
+
+#countdownDisplay {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
 
