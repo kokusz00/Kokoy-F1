@@ -1,1 +1,39 @@
+/* style.css */
+body {
+  margin: 0;
+  background: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
+#phone {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  border: 4px solid #333;
+  border-radius: 30px;
+  background: #000;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+#screen {
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+#powerBtn {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 15px;
+  background: #555;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
