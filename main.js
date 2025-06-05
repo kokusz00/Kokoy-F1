@@ -19,17 +19,17 @@ powerBtn.addEventListener("click", () => {
 function turnOnPhone() {
   isOn = true;
   screen.innerHTML = "";
-  fetch(BASE_PATH + "screens/startup.html")
+  fetch("startup.html")
     .then(res => res.text())
     .then(html => {
       screen.innerHTML = html;
       const script = document.createElement("script");
-      script.src = BASE_PATH + "screens-js/startup.js";
+      script.src = "startup.js";
       screen.appendChild(script);
 
       const style = document.createElement("link");
       style.rel = "stylesheet";
-      style.href = BASE_PATH + "screens-css/startup.css";
+      style.href = "startup.css";
       document.head.appendChild(style);
     });
 }
