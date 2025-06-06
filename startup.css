@@ -1,39 +1,40 @@
-/* screens-css/startup.css */
-.startup-screen {
-  width: 100%;
-  height: 100%;
-  background: #000;
+body {
+  margin: 0;
+  background: black;
   color: white;
-  position: relative;
-  font-family: 'Segoe Script', cursive;
+  font-family: 'Segoe UI', sans-serif;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.center-text {
-  font-size: 3em;
-  opacity: 0;
-  animation: handwriting 2s forwards;
-}
-
-.powered-text {
-  position: absolute;
-  bottom: 20px;
-  font-size: 0.9em;
+#bootScreen {
   text-align: center;
-  width: 100%;
-  color: #aaa;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.handwriting {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5em;
+  animation: handwriting 2s ease forwards;
 }
 
 @keyframes handwriting {
-  0% {
-    opacity: 0;
-    transform: scale(1.5) rotate(-5deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
+.powered {
+  margin-top: 2em;
+  font-size: 1em;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
