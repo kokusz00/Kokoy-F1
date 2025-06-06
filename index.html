@@ -2,16 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Kokoy F1 - Power Off</title>
+  <title>Kokoy F1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="off-screen">
-  <div id="powerButton"></div>
+<body>
+  <div id="phone">
+    <div id="screen">
+      <!-- Default screen is off -->
+    </div>
+    <button id="powerBtn">⏻</button>
+  </div>
 
   <script>
-    document.getElementById("powerButton").addEventListener("click", () => {
-      window.location.href = "startup.html";
+    document.getElementById("powerBtn").addEventListener("click", () => {
+      document.getElementById("screen").innerHTML = '<iframe src="startup.html" width="100%" height="100%" style="border: none;"></iframe>';
     });
   </script>
 </body>
