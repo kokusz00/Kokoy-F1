@@ -1,12 +1,17 @@
 window.onload = () => {
-  const bootScreen = document.getElementById("bootScreen");
+  const logo = document.getElementById("logo");
+  const powered = document.getElementById("powered");
 
-  // Show animation after 1 second
   setTimeout(() => {
-    bootScreen.style.opacity = 1;
+    logo.classList.remove("hidden");
+    logo.classList.add("show");
   }, 1000);
 
-  // After 6 seconds total, go to unlock.html
+  setTimeout(() => {
+    powered.classList.remove("hidden");
+    powered.classList.add("show");
+  }, 3000);
+
   setTimeout(() => {
     window.location.href = "unlock.html";
   }, 6000);
