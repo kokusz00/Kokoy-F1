@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="unlock.css" />
 </head>
 <body>
+  <!-- Volume buttons -->
+  <div id="volumeButtons">
+    <div class="volume-btn" id="volumeUp"></div>
+    <div class="volume-btn" id="volumeDown"></div>
+  </div>
+
   <div id="lockScreen">
     <div id="clock"></div>
     <div id="swipeUp">Swipe up to unlock</div>
@@ -20,7 +26,18 @@
       <div class="dot"></div>
     </div>
     <div id="numpad">
-      ${[1,2,3,4,5,6,7,8,9,0].map(n => `<button>${n}</button>`).join('')}
+      <div class="row">
+        <button>1</button><button>2</button><button>3</button>
+      </div>
+      <div class="row">
+        <button>4</button><button>5</button><button>6</button>
+      </div>
+      <div class="row">
+        <button>7</button><button>8</button><button>9</button>
+      </div>
+      <div class="row">
+        <button>0</button>
+      </div>
     </div>
   </div>
 
