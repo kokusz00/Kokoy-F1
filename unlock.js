@@ -14,6 +14,7 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
+// 🔄 Changed from swipe to click
 swipeUp.addEventListener("click", () => {
   lockScreen.style.display = "none";
   pinScreen.style.display = "block";
