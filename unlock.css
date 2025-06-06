@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  background: black;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#clock {
+  font-size: 3em;
+  margin-bottom: 1em;
+}
+
+#swipeUp {
+  font-size: 1em;
+  opacity: 0.5;
+}
+
+#pinScreen {
+  text-align: center;
+}
+
+#dots {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: grey;
+  margin: 0 5px;
+  transition: background 0.3s;
+}
+
+#numpad button {
+  font-size: 1.5em;
+  margin: 5px;
+  padding: 10px 20px;
+  background: #222;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(-5px); }
+  25% { transform: translateX(5px); }
+  50% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
