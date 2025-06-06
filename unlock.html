@@ -1,34 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Unlock</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      background: black;
-      color: white;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      flex-direction: column;
+<div class="unlock-screen">
+  <div class="unlock-box">
+    <h2>Enter PIN</h2>
+    <input type="password" id="pinInput" maxlength="4" />
+    <button onclick="checkPin()">Unlock</button>
+    <p id="error" style="color: red; display: none;">Wrong PIN</p>
+  </div>
+</div>
+
+<style>
+  .unlock-screen {
+    height: 100%;
+    width: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .unlock-box {
+    text-align: center;
+  }
+
+  input[type="password"] {
+    padding: 10px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    width: 100px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #444;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+</style>
+
+<script>
+  function checkPin() {
+    const input = document.getElementById("pinInput").value;
+    const error = document.getElementById("error");
+
+    const correctPin = "1234"; // Default pin, can be made configurable
+
+    if (input === correctPin) {
+      window.location.href = "home.html";
+    } else {
+      error.style.display = "block";
     }
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #1a1a1a;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <h1>Swipe up or click to unlock</h1>
-  <button onclick="window.location.href='home.html'">Unlock</button>
-</body>
-</html>
+  }
+</script>
