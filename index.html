@@ -1,18 +1,18 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kokoy F1</title>
+  <title>Kokoy F1 - Power Off</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div id="phone">
-    <div id="screen"></div>
-    <button id="powerBtn">⏻</button>
-  </div>
+<body class="off-screen">
+  <div id="powerButton"></div>
 
-  <script src="main.js"></script>
+  <script>
+    document.getElementById("powerButton").addEventListener("click", () => {
+      window.location.href = "startup.html";
+    });
+  </script>
 </body>
 </html>
