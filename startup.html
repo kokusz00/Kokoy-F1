@@ -1,6 +1,149 @@
-<!-- screens/startup.html -->
-<div class="startup-screen">
-  <div class="center-text" id="handwriting">F1</div>
-  <div class="powered-text">Powered by: Kokoy</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kokoy F1 - Startup</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
 
+    #bootScreen {
+      text-align: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .handwriting {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+      opacity: 0;
+      animation: handwriting 1s ease forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes handwriting {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .powered {
+      margin-top: 2em;
+      font-size: 1em;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 3s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    #powerButton, #volUp, #volDown {
+      position: absolute;
+      background: gray;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #powerButton {
+      width: 30px;
+      height: 60px;
+      right: -35px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #volUp {
+      width: 20px;
+      height: 40px;
+      left: -25px;
+      top: 40%;
+    }
+
+    #volDown {
+      width: 20px;
+      height: 40px;
+      left: -25px;
+      top: 55%;
+    }
+
+    #volumeDisplay {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 1em;
+      display: none;
+      animation: volumeFade 2s ease-out forwards;
+    }
+
+    @keyframes volumeFade {
+      0% { opacity: 1; }
+      100% { opacity: 0; display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="bootScreen">
+    <div id="logo" class="handwriting">F1</div>
+    <div id="powered" class="powered">Powered by Kokoy</div>
+  </div>
+
+  <div id="powerButton" title="Power Button"></div>
+  <div id="volUp" title="Volume Up"></div>
+  <div id="volDown" title="Volume Down"></div>
+  <div id="volumeDisplay">Volume: 5</div>
+
+  <script>
+    let booted = false;
+    let volume = 5;
+
+    const bootScreen = document.getElementById("bootScreen");
+    const powerBtn = document.getElementById("powerButton");
+    const volumeDisplay = document.getElementById("volumeDisplay");
+
+    powerBtn.addEventListener("click", () => {
+      if (booted) return;
+      booted = true;
+      bootScreen.style.opacity = 1;
+
+      setTimeout(() => {
+        window.location.href = "unlock.html";
+      }, 6000);
+    });
+
+    function showVolume() {
+      volumeDisplay.textContent = `Volume: ${volume}`;
+      volumeDisplay.style.display = "block";
+      volumeDisplay.style.opacity = 1;
+      volumeDisplay.style.animation = "none";
+      void volumeDisplay.offsetWidth; // trigger reflow
+      volumeDisplay.style.animation = "volumeFade 2s ease-out forwards";
+    }
+
+    document.getElementById("volUp").addEventListener("click", () => {
+      if (volume < 10) volume++;
+      showVolume();
+    });
+
+    document.getElementById("volDown").addEventListener("click", () => {
+      if (volume > 0) volume--;
+      showVolume();
+    });
+  </script>
+</body>
+</html>
