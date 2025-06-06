@@ -14,28 +14,16 @@ body {
   text-align: center;
 }
 
-.hidden {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.show {
-  animation: fadeInUp 1s ease forwards;
-}
-
 .handwriting {
   font-family: 'Pacifico', cursive;
   font-size: 2.5em;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 .powered {
   margin-top: 2em;
   font-size: 1em;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
