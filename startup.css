@@ -12,29 +12,30 @@ body {
 
 #bootScreen {
   text-align: center;
+}
+
+.hidden {
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transform: translateY(20px);
+}
+
+.show {
+  animation: fadeInUp 1s ease forwards;
 }
 
 .handwriting {
   font-family: 'Pacifico', cursive;
   font-size: 2.5em;
-  animation: handwriting 2s ease forwards;
-}
-
-@keyframes handwriting {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
 }
 
 .powered {
   margin-top: 2em;
   font-size: 1em;
-  opacity: 0;
-  animation: fadeIn 2s ease forwards;
-  animation-delay: 2s;
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
